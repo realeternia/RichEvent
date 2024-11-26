@@ -1,0 +1,73 @@
+﻿events:
+  - id: 1
+    type: "quest"
+    name: "被外星人绑架，消失5天"
+    pic: "ufo"
+    mp3: "ufo"
+    reset: true
+  - id: 2
+    type: "destiny"
+    name: "随地乱扔垃圾，罚款30元"
+    pic: "laji"
+    mp3: "laji"
+    reset: true
+  - id: 3
+    type: "destiny"
+    name: "在路边捡到50元"
+    pic: "jianqian"
+    mp3: "jianqian"
+    reset: false
+  - id: 4
+    type: "destiny"
+    name: "出国度假3天"
+    pic: "dujia"
+    mp3: "dujia"
+    reset: false
+  - id: 5
+    type: "destiny"
+    name: "车辆被偷窃遗失"
+    pic: "touche"
+    mp3: "touche"
+    reset: false
+  - id: 6
+    type: "destiny"
+    name: "车辆被偷窃遗失"
+    pic: "touche"
+    mp3: "touche"
+    reset: false
+  - id: 7
+    type: "destiny"
+    name: "闯红灯被抓，罚款30"
+    pic: "red"
+    mp3: "red"
+    reset: false
+  - id: 8
+    type: "destiny"
+    name: "小狗随地大小便，罚款30"
+    pic: "dog"
+    mp3: "dog"
+    reset: false
+  - id: 9
+    type: "destiny"
+    name: "彩票中奖，得到100元"
+    pic: "lotty"
+    mp3: "lotty"
+    reset: false
+  - id: 10
+    type: "destiny"
+    name: "继承遗产，得到100元"
+    pic: "yichan"
+    mp3: "yichan"
+    reset: false
+  - id: 11
+    type: "quest"
+    name: "食用过期牛奶，住院3天"
+    pic: "zhongdu"
+    mp3: "zhongdu"
+    reset: false
+  - id: 12
+    type: "quest"
+    name: "请朋友吃大餐，花费50元"
+    pic: "chifan"
+    mp3: "chifan"
+    reset: false
