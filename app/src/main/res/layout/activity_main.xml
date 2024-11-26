@@ -1,34 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="100dp"
-        android:layout_height="75dp"
-        android:text="随机事件" />
+        android:id="@+id/buttonQuest"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/imageView"
+        android:background="@drawable/quest" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="100dp"
-        android:layout_height="75dp"
-        android:text="随机事件" />
+        android:id="@+id/buttonEvt"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/imageView"
+        android:background="@drawable/ming" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="330dp"
-        tools:src="@tools:sample/avatars" />
+        android:layout_width="700dp"
+        android:layout_height="700dp"
+        android:layout_centerInParent="true"
+        tools:src="@drawable/ufo" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="44dp"
-        android:text="TextView"
+        android:layout_below="@id/imageView"
+        android:text="将会发生什么呢"
         android:textAlignment="center"
-        android:textSize="20sp" />
-</LinearLayout>
+        android:textSize="40sp" />
+</RelativeLayout>
