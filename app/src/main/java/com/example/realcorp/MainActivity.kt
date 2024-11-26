@@ -1,5 +1,6 @@
 package com.example.realcorp
 
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.media.MediaPlayer
 import android.os.Bundle
@@ -43,17 +44,7 @@ class MainActivity : AppCompatActivity() {
             val imageView = findViewById<ImageView>(R.id.imageView)
             val nowEvt = eventQuest[idxQuest]
 
-            // 你可以在这里对imageView进行操作，比如设置图片
-//            imageView.setImageResource(R.drawable.ufo)
-
-            val drawableName = "com.example.realcorp:drawable/" + nowEvt.pic // 注意：这里通常不需要 .png 扩展名
-            val drawableId = resources.getIdentifier(drawableName, "drawable", packageName)
-            if (drawableId != 0) { // 0 表示未找到资源
-                val drawable = ContextCompat.getDrawable(context, drawableId)
-                imageView.setImageDrawable(drawable)
-            }
-
-            val bitmap = BitmapFactory.decodeFile("drawable/" + nowEvt.pic + ".png")
+            val bitmap = readPng(nowEvt.pic + ".png")
             imageView.setImageBitmap(bitmap)
 
             findViewById<TextView>(R.id.textView).text = nowEvt.name
@@ -75,12 +66,25 @@ class MainActivity : AppCompatActivity() {
         val buttonEvt = findViewById<Button>(R.id.buttonEvt)
         buttonEvt.setOnClickListener{
             val imageView = findViewById<ImageView>(R.id.imageView)
-            // 你可以在这里对imageView进行操作，比如设置图片
-            imageView.setImageResource(R.drawable.laji)
-            findViewById<TextView>(R.id.textView).text = "随地乱扔垃圾，罚款300元"
+            val nowEvt = eventDestiny[idxDestiny]
 
-            initMediaPlayer("laji.mp3")
+            val bitmap = readPng(nowEvt.pic + ".png")
+            imageView.setImageBitmap(bitmap)
+
+            findViewById<TextView>(R.id.textView).text = nowEvt.name
+
+            initMediaPlayer(nowEvt.mp3 + ".mp3")
             mediaPlayer.start()
+
+            if(nowEvt.reset)
+            {
+                eventDestiny.shuffle(Random)
+                idxDestiny = 0
+            }
+            else
+            {
+                idxDestiny++
+            }
         }
     }
 
@@ -99,5 +103,10 @@ class MainActivity : AppCompatActivity() {
         var inputStream : InputStream = assets.open(file)
         var yaml = Yaml()
         return yaml.loadAs(inputStream, EvtCfg::class.java)
+    }
+
+    fun readPng(file : String): Bitmap{
+        var inputStream : InputStream = assets.open(file)
+        return BitmapFactory.decodeStream(inputStream)
     }
 }
