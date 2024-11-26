@@ -9,15 +9,22 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-
+import org.yaml.snakeyaml.Yaml
+import java.io.InputStream
 
 class MainActivity : AppCompatActivity() {
     private val mediaPlayer = MediaPlayer()
+    private var evtConfig : EvtCfg = EvtCfg()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+
+        evtConfig = realYamlFile("Debugger.yaml")
+//        evtConfig?.events?.forEach { event ->
+//            Log.d("init", "Event ID: ${event.id}, Name: ${event.name}, IP: ${event.ip}, Port: ${event.port}")
+//        }
 
         val buttonQuest = findViewById<Button>(R.id.buttonQuest)
         buttonQuest.setOnClickListener{
@@ -53,5 +60,11 @@ class MainActivity : AppCompatActivity() {
         mediaPlayer.setDataSource(fd.fileDescriptor, fd.startOffset, fd.length)
         mediaPlayer.prepare()
         mediaPlayer.seekTo(3300) // 跳过语音提示
+    }
+
+    fun realYamlFile(file : String): EvtCfg{
+        var inputStream : InputStream = assets.open(file)
+        var yaml = Yaml()
+        return yaml.loadAs(inputStream, EvtCfg::class.java)
     }
 }
