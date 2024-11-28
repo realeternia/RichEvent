@@ -8,6 +8,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -18,6 +19,7 @@ import java.io.InputStream
 class MainActivity : AppCompatActivity() {
     private val mediaPlayer = MediaPlayer()
     private var evtConfig : EvtCfg = EvtCfg()
+    private var lastClickTime: Long = 0
 
     val eventQuest = mutableListOf<Event>()  // 替换 EventType 为您的事件类型
     val eventDestiny = mutableListOf<Event>()  // 同上，注意检查命名是否正确
@@ -41,6 +43,16 @@ class MainActivity : AppCompatActivity() {
 
         val buttonQuest = findViewById<Button>(R.id.buttonQuest)
         buttonQuest.setOnClickListener{
+            val currentTime = System.currentTimeMillis()
+            if (currentTime - lastClickTime < 3000) {
+                // 如果两次点击间隔小于3秒，显示Toast提示错误
+                Toast.makeText(this, "错误：点击间隔必须大于3秒", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            } else {
+                // 如果两次点击间隔大于或等于3秒，处理正常点击事件
+                lastClickTime = currentTime
+            }
+
             val imageView = findViewById<ImageView>(R.id.imageView)
             val nowEvt = eventQuest[idxQuest]
 
@@ -65,6 +77,16 @@ class MainActivity : AppCompatActivity() {
 
         val buttonEvt = findViewById<Button>(R.id.buttonEvt)
         buttonEvt.setOnClickListener{
+            val currentTime = System.currentTimeMillis()
+            if (currentTime - lastClickTime < 3000) {
+                // 如果两次点击间隔小于3秒，显示Toast提示错误
+                Toast.makeText(this, "错误：点击间隔必须大于3秒", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            } else {
+                // 如果两次点击间隔大于或等于3秒，处理正常点击事件
+                lastClickTime = currentTime
+            }
+
             val imageView = findViewById<ImageView>(R.id.imageView)
             val nowEvt = eventDestiny[idxDestiny]
 

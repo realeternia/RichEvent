@@ -6,25 +6,25 @@
     mp3: "ufo"
     reset: true
   - id: 2
-    type: "destiny"
+    type: "quest"
     name: "随地乱扔垃圾，罚款30元"
     pic: "laji"
     mp3: "laji"
-    reset: true
+    reset: false
   - id: 3
-    type: "destiny"
+    type: "quest"
     name: "在路边捡到50元"
     pic: "jianqian"
     mp3: "jianqian"
     reset: false
   - id: 4
-    type: "destiny"
+    type: "quest"
     name: "出国度假3天"
     pic: "dujia"
     mp3: "dujia"
     reset: false
   - id: 5
-    type: "destiny"
+    type: "quest"
     name: "车辆被偷窃遗失"
     pic: "touche"
     mp3: "touche"
@@ -40,9 +40,9 @@
     name: "闯红灯被抓，罚款30"
     pic: "red"
     mp3: "red"
-    reset: false
+    reset: true
   - id: 8
-    type: "destiny"
+    type: "quest"
     name: "小狗随地大小便，罚款30"
     pic: "dog"
     mp3: "dog"
@@ -70,4 +70,34 @@
     name: "请朋友吃大餐，花费50元"
     pic: "chifan"
     mp3: "chifan"
+    reset: false
+  - id: 13
+    type: "destiny"
+    name: "小偷光顾，损失50元"
+    pic: "thief"
+    mp3: "thief"
+    reset: false
+  - id: 14
+    type: "destiny"
+    name: "征收地产税，每块地缴费10元（最高100元）"
+    pic: "tax"
+    mp3: "tax"
+    reset: false
+  - id: 15
+    type: "destiny"
+    name: "战争爆发，每位玩家损失骰子数乘以￥10"
+    pic: "war"
+    mp3: "war"
+    reset: false
+  - id: 16
+    type: "quest"
+    name: "售卖盗版小说，罚款50元"
+    pic: "chifan"
+    mp3: "chifan"
+    reset: false
+  - id: 17
+    type: "quest"
+    name: "购物抽中免单券，免费获得一件道具"
+    pic: "choujiang"
+    mp3: "choujiang"
     reset: false

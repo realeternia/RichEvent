@@ -12,6 +12,7 @@
         android:layout_height="200dp"
         android:layout_centerVertical="true"
         android:layout_toLeftOf="@id/imageView"
+        android:layout_marginRight="30dp"
         android:background="@drawable/quest" />
 
     <Button
@@ -20,6 +21,7 @@
         android:layout_height="200dp"
         android:layout_centerVertical="true"
         android:layout_toRightOf="@id/imageView"
+        android:layout_marginLeft="30dp"
         android:background="@drawable/ming" />
 
     <ImageView
@@ -27,7 +29,7 @@
         android:layout_width="700dp"
         android:layout_height="700dp"
         android:layout_centerInParent="true"
-        tools:src="@drawable/ufo" />
+        tools:src="@color/teal_700" />
 
     <TextView
         android:id="@+id/textView"
